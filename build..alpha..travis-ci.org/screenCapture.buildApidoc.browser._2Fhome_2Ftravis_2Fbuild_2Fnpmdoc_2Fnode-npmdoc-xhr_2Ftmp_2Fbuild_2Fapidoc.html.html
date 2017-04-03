@@ -1,0 +1,300 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/naugtur/xhr">xhr (v2.4.0)</a>
+</h1>
+<h4>small xhr abstraction</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xhr">module xhr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.XMLHttpRequest">
+            function <span class="apidocSignatureSpan">xhr.</span>XMLHttpRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.del">
+            function <span class="apidocSignatureSpan">xhr.</span>del
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.get">
+            function <span class="apidocSignatureSpan">xhr.</span>get
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.head">
+            function <span class="apidocSignatureSpan">xhr.</span>head
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.patch">
+            function <span class="apidocSignatureSpan">xhr.</span>patch
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.post">
+            function <span class="apidocSignatureSpan">xhr.</span>post
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xhr.put">
+            function <span class="apidocSignatureSpan">xhr.</span>put
+            <span class="apidocSignatureSpan">(uri, options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xhr" id="apidoc.module.xhr">module xhr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.XMLHttpRequest" id="apidoc.element.xhr.XMLHttpRequest">
+        function <span class="apidocSignatureSpan">xhr.</span>XMLHttpRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noop() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var window = require("global/window")
+var isFunction = require("is-function")
+var parseHeaders = require("parse-headers")
+var xtend = require("xtend")
+
+module.exports = createXHR
+createXHR.XMLHttpRequest = window.XMLHttpRequest || noop
+createXHR.XDomainRequest = "withCredentials" in (new createXHR.<span class="apidocCodeKeywordSpan">XMLHttpRequest</span>()) ? createXHR.XMLHttpRequest : window.XDomainRequest
+
+forEachArray(["get", "put", "post", "patch", "head", "delete"], function
+(method) {
+createXHR[method === "delete" ? "del" : method] = function(uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.del" id="apidoc.element.xhr.del">
+        function <span class="apidocSignatureSpan">xhr.</span>del
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log(resp.body)
+})
+```
+
+or
+
+```js
+xhr.<span class="apidocCodeKeywordSpan">del</span>('/delete-me', { headers: { my: 'auth' } }, function (err,
+resp) {
+  console.log(resp.statusCode);
+})
+```
+
+## Options
+
+### `options.method`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.get" id="apidoc.element.xhr.get">
+        function <span class="apidocSignatureSpan">xhr.</span>get
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.head" id="apidoc.element.xhr.head">
+        function <span class="apidocSignatureSpan">xhr.</span>head
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.patch" id="apidoc.element.xhr.patch">
+        function <span class="apidocSignatureSpan">xhr.</span>patch
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.post" id="apidoc.element.xhr.post">
+        function <span class="apidocSignatureSpan">xhr.</span>post
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The `xhr` module has convience functions attached that will make requests with the given method.
+Each function is named after its method, with the exception of `DELETE` which is called `xhr.del` for compatibility.
+
+The method shorthands may be combined with the url-first form of `xhr` for succinct and descriptive requests. For example,
+
+```js
+xhr.<span class="apidocCodeKeywordSpan">post</span>('/post-to-me', function(err, resp) {
+  console.log(resp.body)
+})
+```
+
+or
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xhr.put" id="apidoc.element.xhr.put">
+        function <span class="apidocSignatureSpan">xhr.</span>put
+        <span class="apidocSignatureSpan">(uri, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (uri, options, callback) {
+    options = initParams(uri, options, callback)
+    options.method = method.toUpperCase()
+    return _createXHR(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
