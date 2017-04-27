@@ -251,7 +251,23 @@ resp) {
     options.method = method.toUpperCase()
     return _createXHR(options)
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        if (i === methods.length) assert.end()
+    })
+})
+})
+if (!window.XDomainRequest) {
+test(&#x22;[func] xhr.head&#x22;, function(assert) {
+    xhr.<span class="apidocCodeKeywordSpan">head</span>({
+        uri: &#x22;/mock/200ok&#x22;,
+    }, function(err, resp, body) {
+        assert.ifError(err, &#x22;no err&#x22;)
+        assert.equal(resp.statusCode, 200)
+        assert.equal(resp.method, &#x22;HEAD&#x22;)
+        assert.notOk(resp.body)
+        assert.end()
+...</pre></li>
     </ul>
 
 
