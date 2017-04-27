@@ -1,6 +1,6 @@
 # npmdoc-xhr
 
-#### api documentation for  [xhr (v2.4.0)](https://github.com/naugtur/xhr)  [![npm package](https://img.shields.io/npm/v/npmdoc-xhr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-xhr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-xhr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-xhr)
+#### basic api documentation for  [xhr (v2.4.0)](https://github.com/naugtur/xhr)  [![npm package](https://img.shields.io/npm/v/npmdoc-xhr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-xhr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-xhr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-xhr)
 
 #### small xhr abstraction
 
@@ -83,7 +83,8 @@
         "browser": "run-browser -m test/mock-server.js test/index.js",
         "test": "run-browser test/index.js -b -m test/mock-server.js | tap-spec"
     },
-    "version": "2.4.0"
+    "version": "2.4.0",
+    "bin": {}
 }
 ```
 
